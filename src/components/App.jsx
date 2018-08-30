@@ -10,15 +10,26 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: 'Frodo',
+            title: 'the grey',
             place: 'Mordor',
-            text: `How I have longed for Death's gentle caresse.`,
+            text: `How I have longed for Death's gentle caresse`,
         }
     }
+    GandalfsTitle = (value) => {
+        this.setState({ title: value });
+    }
     render() {
-        <input placeholder="Hello" />
-        return <h1>Hello {this.state.name} and {this.props.name}! Welcome to {this.state.place}, {this.props.place}! {this.text}</h1>;
-
+        return (
+            <div>
+                <input
+                    placeholder="Gandalf's Title"
+                    value={this.state.name}
+                    onChange={(event) => this.GandalfsTitle(event.target.value)}
+                />
+                <h1>Hello {this.props.name}, {this.state.title}! Welcome to {this.props.place}, {this.state.place}!</h1>
+                <h1>{this.props.name}, {this.state.title}: {this.state.text}.</h1>
+            </div>
+        );
     }
 };
 
