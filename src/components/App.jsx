@@ -7,8 +7,14 @@ import React, { Component } from 'react';
 // }
 
 class App extends Component {
-    reander() {
-        return <h1>Hello {props.name}! Welcome to {props.place}!</h1>;
+    constructor(props) {
+        super(props);
+        this.name = 'Richard'
+        this.place = 'Heaven'
+        this.text = "How I have longed for Death's gentle caresse."
+    }
+    render() {
+        return <h1>Hello {this.name} and {this.props.name}! Welcome to {this.place}, {this.props.place}! {this.text}</h1>;
 
     }
 };
