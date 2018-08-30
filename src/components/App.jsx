@@ -9,12 +9,15 @@ import React, { Component } from 'react';
 class App extends Component {
     constructor(props) {
         super(props);
-        this.name = 'Richard'
-        this.place = 'Heaven'
-        this.text = "How I have longed for Death's gentle caresse."
+        this.state = {
+            name: 'Frodo',
+            place: 'Mordor',
+            text: `How I have longed for Death's gentle caresse.`,
+        }
     }
     render() {
-        return <h1>Hello {this.name} and {this.props.name}! Welcome to {this.place}, {this.props.place}! {this.text}</h1>;
+        <input placeholder="Hello" />
+        return <h1>Hello {this.state.name} and {this.props.name}! Welcome to {this.state.place}, {this.props.place}! {this.text}</h1>;
 
     }
 };
